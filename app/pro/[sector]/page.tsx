@@ -1,6 +1,5 @@
 
 import Link from 'next/link'
-import { useParams } from 'next/navigation'
 import { ArrowLeft, Zap } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -138,11 +137,9 @@ const proData: Record<string, any> = {
   }
 }
 
-export default function SectorProPage() {
-  const params = useParams()
-  const sector = params.sector as string
-  
-  const sectorData = proData[sector]
+export default function SectorProPage({ params }: { params: { sector: string } }) {  
+    const sector = params.sector
+const sectorData = proData[sector]
   
   if (!sectorData) {
     return <div className="min-h-screen flex items-center justify-center">Sector no encontrado</div>
