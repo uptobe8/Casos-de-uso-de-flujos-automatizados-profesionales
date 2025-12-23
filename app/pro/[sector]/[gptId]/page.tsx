@@ -10,7 +10,7 @@ interface GPTDetail {
   ejemplo: string
 }
 
-const basicosGPTsData: Record<string, { nombre: string, icon: string, color: string, gpts: GPTDetail[] }> = {
+const proData: Record<string, { nombre: string, icon: string, color: string, gpts: GPTDetail[] }> = {
   inmobiliaria: {
     nombre: 'Inmobiliaria',
     icon: '🏠',
@@ -31,7 +31,7 @@ const basicosGPTsData: Record<string, { nombre: string, icon: string, color: str
 export async function generateStaticParams() {
   const params: { sector: string, gptId: string }[] = []
   
-  Object.entries(basicosGPTsData).forEach(([sectorKey, sectorData]) => {
+  Object.entries(proData).forEach(([sectorKey, sectorData]) => {
     sectorData.gpts.forEach((gpt) => {
       params.push({
         sector: sectorKey,
@@ -49,7 +49,7 @@ export default async function GPTDetailPage({
   params: Promise<{ sector: string, gptId: string }>
 }) {
   const { sector, gptId } = await params
-  const sectorData = basicosGPTsData[sector]
+  const sectorData = proData[sector]
   
   if (!sectorData) {
     return <div className="min-h-screen flex items-center justify-center">Sector no encontrado</div>
