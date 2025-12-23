@@ -1,10 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
 import { useParams } from 'next/navigation'
-import AnimatedAvatar from '@/components/AnimatedAvatar'
-import AiChat from '@/components/AiChat'
 import { ArrowLeft, Sparkles } from 'lucide-react'
 
 // Complete Básicos GPTs data - 60 total (10 per sector)
@@ -116,22 +113,15 @@ const basicosData: Record<string, any> = {
 export default function SectorBasicosPage() {
   const params = useParams()
   const sector = params.sector as string
-  const [isChatActive, setIsChatActive] = useState(false)
   
   const sectorData = basicosData[sector]
   
   if (!sectorData) {
-    return <div>Sector no encontrado</div>
+    return <div className="min-h-screen flex items-center justify-center">Sector no encontrado</div>
   }
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
-      <AnimatedAvatar
-        isChatActive={isChatActive}
-        onAvatarClick={() => setIsChatActive(!isChatActive)}
-      />
-      <AiChat isOpen={isChatActive} onClose={() => setIsChatActive(false)} />
-
       <div className="container mx-auto px-4 py-8">
         <Link href="/basicos" className="inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors mb-6">
           <ArrowLeft className="w-5 h-5" />
