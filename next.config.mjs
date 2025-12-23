@@ -6,6 +6,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+    output: 'export',
+    basePath: '/Casos-de-uso-de-flujos-automatizados-profesionales',
  
 }
 
