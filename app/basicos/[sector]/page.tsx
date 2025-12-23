@@ -1,6 +1,4 @@
-
 import Link from 'next/link'
-
 import { ArrowLeft, Sparkles } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -14,7 +12,7 @@ export function generateStaticParams() {
   ]
 }
 
-// Complete Básicos GPTs data - 60 total (10 per sector)
+// Complete Básicos GPTs data – 60 total (10 per sector)
 const basicosData: Record<string, any> = {
   inmobiliaria: {
     nombre: "Inmobiliaria",
@@ -120,9 +118,13 @@ const basicosData: Record<string, any> = {
   }
 }
 
-export default function SectorBasicosPage({ params }: { params: { sector: string } }) {  
-    const sector = params.sector
-const sectorData = basicosData[sector]
+export default async function SectorBasicosPage({
+  params
+}: {
+  params: Promise<{ sector: string }>
+}) {
+  const { sector } = await params
+  const sectorData = basicosData[sector]
 
   if (!sectorData) {
     return <div className="min-h-screen flex items-center justify-center">Sector no encontrado</div>
