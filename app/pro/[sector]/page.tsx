@@ -4,16 +4,6 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { ArrowLeft, Zap } from 'lucide-react'
 
-export function generateStaticParams() {
-  return [
-    { sector: 'inmobiliaria' },
-    { sector: 'consultoria' },
-    { sector: 'restauracion' },
-    { sector: 'legal' },
-    { sector: 'moda' },
-    { sector: 'tatuaje' },
-    { sector: 'clinicas' }
-  ]
 // Complete Pro GPTs data - 70 total (10 per sector x 7 sectors)
 const proData: Record<string, any> = {
   inmobiliaria: {
