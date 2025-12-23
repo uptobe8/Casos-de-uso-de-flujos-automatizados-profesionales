@@ -1,9 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
-import AnimatedAvatar from '@/components/AnimatedAvatar'
-import AiChat from '@/components/AiChat'
 import { ArrowLeft } from 'lucide-react'
 
 const sectors = [
@@ -66,24 +63,14 @@ const sectors = [
 ]
 
 export default function ProPage() {
-  const [isChatActive, setIsChatActive] = useState(false)
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
-      <AnimatedAvatar
-        isChatActive={isChatActive}
-        onAvatarClick={() => setIsChatActive(!isChatActive)}
-      />
-      <AiChat isOpen={isChatActive} onClose={() => setIsChatActive(false)} />
-
       <div className="container mx-auto px-4 py-8">
-        {/* Back button */}
         <Link href="/" className="inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors mb-6">
           <ArrowLeft className="w-5 h-5" />
           <span>Volver al inicio</span>
         </Link>
 
-        {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-4">
             <span className="font-semibold">GPT's PRO</span>
@@ -96,7 +83,6 @@ export default function ProPage() {
           </p>
         </div>
 
-        {/* Sectors Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {sectors.map((sector) => (
             <Link
@@ -104,8 +90,8 @@ export default function ProPage() {
               href={`/pro/${sector.id}`}
               className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className={`w-14 h-14 bg-gradient-to-br ${sector.color} rounded-xl flex items-center justify-center mb-4`}>
-                <Icon className="w-7 h-7 text-white" />
+              <div className={`w-14 h-14 bg-gradient-to-br ${sector.color} rounded-xl flex items-center justify-center mb-4 text-3xl`}>
+                {sector.icon}
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">
