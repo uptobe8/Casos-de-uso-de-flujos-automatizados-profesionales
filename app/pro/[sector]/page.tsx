@@ -173,11 +173,9 @@ const sectorData = proData[sector]
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {sectorData.gpts.map((gpt: any) => (
             <div
-                          <Link href={`/pro/${sector}/${gpt.id}`}>
               key={gpt.id}
               className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-200"
             >
-              <div className="flex items-start gap-4">
                 <div className={`w-12 h-12 bg-gradient-to-br ${sectorData.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
                   <Zap className="w-6 h-6 text-white" />
                 </div>
