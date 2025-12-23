@@ -1,3 +1,19 @@
+'use client'
+
+import Link from 'next/link'
+import { useParams } from 'next/navigation'
+import { ArrowLeft, Sparkles } from 'lucide-react'
+
+export function generateStaticParams() {
+  return [
+    { sector: 'inmobiliaria' },
+    { sector: 'consultoria' },
+    { sector: 'restauracion' },
+    { sector: 'legal' },
+    { sector: 'moda' },
+    { sector: 'tatuaje' }
+  ]
+}
 export function generateStaticParams() {
   return [
     { sector: 'inmobiliaria' },
