@@ -137,8 +137,12 @@ const proData: Record<string, any> = {
   }
 }
 
-export default function SectorProPage({ params }: { params: { sector: string } }) {  
-    const sector = params.sector
+export default async function SectorProPage({
+    params
+  }: {
+    params: Promise<{ sector: string }>
+  }) {
+    const { sector } = await params
 const sectorData = proData[sector]
   
   if (!sectorData) {
