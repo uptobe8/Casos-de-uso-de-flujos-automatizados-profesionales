@@ -1,6 +1,6 @@
 
 import Link from 'next/link'
-import { useParams } from 'next/navigation'
+
 import { ArrowLeft, Sparkles } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -120,12 +120,10 @@ const basicosData: Record<string, any> = {
   }
 }
 
-export default function SectorBasicosPage() {
-  const params = useParams()
-  const sector = params.sector as string
-  
-  const sectorData = basicosData[sector]
-  
+export default function SectorBasicosPage({ params }: { params: { sector: string } }) {  
+    const sector = params.sector
+const sectorData = basicosData[sector]
+
   if (!sectorData) {
     return <div className="min-h-screen flex items-center justify-center">Sector no encontrado</div>
   }
