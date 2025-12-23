@@ -1,8 +1,18 @@
-'use client'
 
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { ArrowLeft, Sparkles } from 'lucide-react'
+
+export function generateStaticParams() {
+  return [
+    { sector: 'inmobiliaria' },
+    { sector: 'consultoria' },
+    { sector: 'restauracion' },
+    { sector: 'legal' },
+    { sector: 'moda' },
+    { sector: 'tatuaje' }
+  ]
+}
 
 // Complete Básicos GPTs data - 60 total (10 per sector)
 const basicosData: Record<string, any> = {
