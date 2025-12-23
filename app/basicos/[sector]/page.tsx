@@ -1,3 +1,14 @@
+export function generateStaticParams() {
+  return [
+    { sector: 'inmobiliaria' },
+    { sector: 'consultoria' },
+    { sector: 'restauracion' },
+    { sector: 'legal' },
+    { sector: 'moda' },
+    { sector: 'tatuaje' }
+  ]
+}
+
 'use client'
 
 import Link from 'next/link'
