@@ -154,6 +154,7 @@ export default async function SectorBasicosPage({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {sectorData.gpts.map((gpt: any) => (
             <div
+                          <Link href={`/basicos/${sector}/${gpt.id}`}>
               key={gpt.id}
               className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
             >
@@ -170,6 +171,7 @@ export default async function SectorBasicosPage({
                   </p>
                 </div>
               </div>
+                          </Link>
             </div>
           ))}
         </div>
