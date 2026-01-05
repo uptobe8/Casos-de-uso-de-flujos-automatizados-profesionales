@@ -23,30 +23,30 @@ import { flows, categories } from "@/lib/flows-data"
 import type { Flow } from "@/lib/flows-data"
 
 const categoryColors: Record<string, string> = {
-  marketing: "from-[#FF6B35] to-[#FF006E]",
-  analisis: "from-[#00D9FF] to-[#9D4EDD]",
-  creatividad: "from-[#9D4EDD] to-[#FF006E]",
-  administracion: "from-[#00FFD9] to-[#00D9FF]",
+  conceptos: "from-[#FF6B35] to-[#FF006E]",
+  marketplace: "from-[#00D9FF] to-[#9D4EDD]",
+  acceso: "from-[#9D4EDD] to-[#FF006E]",
+  practica: "from-[#00FFD9] to-[#00D9FF]",
 }
 
 const categoryLabels: Record<string, string> = {
-  marketing: "Marketing",
-  analisis: "Análisis",
-  creatividad: "Creatividad",
-  administracion: "Administración",
+  conceptos: "Conceptos",
+  marketplace: "Marketplace",
+  acceso: "Acceso",
+  practica: "Práctica",
 }
 
 const flowIcons: Record<string, typeof Calendar> = {
-  "1": Calendar,
-  "2": FileSearch,
-  "3": BarChart3,
-  "4": ClipboardList,
-  "5": Mail,
-  "6": Palette,
-  "7": ListTodo,
-  "8": TrendingUp,
-  "9": Megaphone,
-  "10": Lightbulb,
+  "1": Lightbulb,
+  "2": Megaphone,
+  "3": Mail,
+  "4": ListTodo,
+  "5": Palette,
+  "6": FileSearch,
+  "7": BarChart3,
+  "8": ClipboardList,
+  "9": TrendingUp,
+  "10": Calendar,
 }
 
 function FlowCard({ flow, index, onSelect }: { flow: Flow; index: number; onSelect: () => void }) {
@@ -232,7 +232,7 @@ function FlowDetailView({ flow, onBack }: { flow: Flow; onBack: () => void }) {
       {/* Footer */}
       <footer className="border-t border-border mt-12 py-6 glass">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>Flujos automatizados basados en mejores prácticas de IA generativa.</p>
+          <p>Aprende a crear asistentes GPT personalizados sin apps externas.</p>
         </div>
       </footer>
     </div>
@@ -259,8 +259,10 @@ export function FlowsGuide() {
               <Zap className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">Flujos Automatizados</h1>
-              <p className="text-muted-foreground text-xs sm:text-sm">Casos de uso profesionales con IA</p>
+              <h1 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
+                Guía de GPTs Personalizados
+              </h1>
+              <p className="text-muted-foreground text-xs sm:text-sm">Qué son los GPTs y el Marketplace</p>
             </div>
           </div>
         </div>
@@ -270,10 +272,11 @@ export function FlowsGuide() {
         {/* Title Section */}
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-gray-900">
-            Casos de uso profesionales de flujos automatizados
+            Descubre el mundo de los GPTs personalizados
           </h2>
           <p className="text-gray-700 text-sm sm:text-base">
-            10 asistentes GPT especializados para automatizar tareas, generar informes y potenciar la creatividad
+            Conoce qué son los GPTs, explora el marketplace y aprende cómo acceder y usar estos asistentes
+            especializados
           </p>
         </div>
 
@@ -305,7 +308,7 @@ export function FlowsGuide() {
         {/* Empty State */}
         {filteredFlows.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500">No hay flujos en esta categoría</p>
+            <p className="text-gray-500">No hay contenido en esta categoría</p>
           </div>
         )}
       </main>
@@ -313,7 +316,7 @@ export function FlowsGuide() {
       {/* Footer */}
       <footer className="border-t border-border mt-12 py-6 glass">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>Flujos automatizados basados en mejores prácticas de IA generativa.</p>
+          <p>Aprende a crear asistentes GPT personalizados sin apps externas.</p>
         </div>
       </footer>
     </div>

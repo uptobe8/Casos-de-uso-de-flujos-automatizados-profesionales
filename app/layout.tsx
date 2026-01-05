@@ -38,8 +38,9 @@ const sourceSerif4 = Source_Serif_4({
 })
 
 export const metadata: Metadata = {
-  title: "Casos de uso profesionales de flujos automatizados - MisGPTs",
-  description: "10 asistentes GPT especializados para automatizar tareas, generar informes y potenciar la creatividad",
+  title: "Guía de GPTs Personalizados - Marketplace y Conceptos",
+  description:
+    "Descubre qué son los GPTs personalizados, explora el marketplace de OpenAI y aprende a acceder y usar asistentes especializados de IA.",
   generator: "v0.app",
   icons: {
     icon: [

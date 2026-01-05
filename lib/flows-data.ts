@@ -2,7 +2,7 @@ export interface Flow {
   id: string
   name: string
   title: string
-  category: "marketing" | "analisis" | "creatividad" | "administracion"
+  category: "conceptos" | "marketplace" | "acceso" | "practica"
   description: string
   template: {
     objetivo: string
@@ -21,225 +21,355 @@ export interface Flow {
 export const flows: Flow[] = [
   {
     id: "1",
-    name: "Calendario Editorial",
-    title: "Calendario Editorial de Redes Sociales",
-    category: "marketing",
+    name: "¿Qué son los GPTs?",
+    title: "Conceptos Básicos de GPTs Personalizados",
+    category: "conceptos",
     description:
-      "Genera un calendario de publicaciones en redes sociales. Proporciona información sobre eventos, promociones o temas mensuales, y obtén un plan de contenidos optimizado para cada plataforma.",
+      "Los GPTs son versiones personalizadas de ChatGPT que cualquier usuario puede crear y adaptar para tareas o temas específicos. Son asistentes especializados que combinan instrucciones personalizadas, conocimiento adicional y capacidades específicas.",
     template: {
       objetivo:
-        "Crear calendario editorial mensual por canal (IG/LinkedIn/TikTok) con pilares, formatos, copies y CTAs.",
-      entradas: ["marca", "objetivo de negocio", "público", "oferta", "tono", "frecuencia", "fechas clave"],
-      salidas: ["tabla por semana/día", "checklist de producción"],
+        "Comprender los elementos fundamentales que conforman un GPT personalizado y cómo se diferencia de ChatGPT estándar.",
+      entradas: [
+        "Instrucciones personalizadas (cómo debe comportarse)",
+        "Conocimiento adicional (documentos y archivos)",
+        "Capacidades específicas (búsqueda web, generación de imágenes, análisis de datos)",
+      ],
+      salidas: [
+        "Comprensión de la estructura de un GPT",
+        "Conocimiento de capacidades disponibles",
+        "Ventaja: no necesitas saber programar",
+      ],
     },
     example: {
-      nombre: "Calendario Social",
-      descripcion: "Planifica y redacta un calendario editorial mensual multicanal.",
+      nombre: "Anatomía de un GPT",
+      descripcion: "Piensa en ellos como asistentes especializados a tu medida.",
       instrucciones:
-        "Primero define pilares → luego asigna formatos → luego genera tabla (fecha, canal, objetivo, hook, copy, CTA, assets).",
+        "Un GPT combina tres elementos: comportamiento (instrucciones), conocimiento (archivos) y herramientas (capacidades nativas). Esto democratiza la IA permitiendo que expertos en cualquier campo creen herramientas útiles sin programar.",
     },
     solicitudes: [
-      "Crea calendario de 4 semanas para IG con 5 posts/semana y 3 reels.",
-      'Dame 10 hooks para el pilar "educativo".',
+      "¿Qué diferencia hay entre ChatGPT y un GPT personalizado?",
+      "¿Necesito saber programar para crear un GPT?",
+      "¿Qué tipo de conocimiento puedo agregar a un GPT?",
     ],
-    limitaciones: ["No publica ni programa; solo genera planificación y textos."],
+    limitaciones: [
+      "Los GPTs heredan las limitaciones del modelo base (conocimiento hasta fecha de corte, alucinaciones, etc.)",
+      "La calidad depende de las instrucciones y el conocimiento que proporciones",
+    ],
   },
   {
     id: "2",
-    name: "Consulta Documentos",
-    title: "Asistente de Consulta de Documentos Internos",
-    category: "administracion",
+    name: "GPT Store",
+    title: "El Marketplace de Asistentes IA",
+    category: "marketplace",
     description:
-      "Responde preguntas basadas en documentos corporativos o archivos internos. Sube PDFs, manuales o políticas y obtén respuestas exactas a tus consultas.",
+      "Lanzada el 10 de enero de 2024, la GPT Store es como la App Store de Apple pero para asistentes de inteligencia artificial. Ya cuenta con más de 3 millones de GPTs creados por usuarios organizados por categorías.",
     template: {
-      objetivo: 'Responder preguntas SOLO con documentos subidos; si no está, decir "no aparece" y pedir el documento.',
-      entradas: ["PDFs/políticas/manuales"],
-      salidas: ["respuesta", "referencia a sección/párrafo"],
+      objetivo:
+        "Descubrir, explorar y utilizar GPTs existentes creados por la comunidad global para resolver necesidades específicas.",
+      entradas: ["Búsqueda por categorías", "GPTs destacados semanalmente", "Filtros y recomendaciones"],
+      salidas: [
+        "Acceso a millones de GPTs especializados",
+        "Inspiración para crear tus propios GPTs",
+        "Soluciones listas para usar",
+      ],
     },
     example: {
-      nombre: "Lector de Políticas",
-      descripcion: "Responde preguntas usando solo documentación interna.",
+      nombre: "GPTs Destacados",
+      descripcion: "Ejemplos populares de la GPT Store.",
       instrucciones:
-        "Ante cada pregunta: (1) busca en Knowledge, (2) cita el fragmento, (3) si no hay evidencia, dilo.",
+        "AllTrails (recomendaciones de senderismo), Consensus (búsqueda académica en 200M artículos), Code Tutor de Khan Academy, Canva (diseño), Scholar AI, Video AI by invideo con Sora 2.",
     },
-    solicitudes: ["¿Cuál es el procedimiento de vacaciones?", "Resúmeme la política de gastos en 7 bullets."],
+    solicitudes: [
+      "¿Cómo encuentro GPTs para mi área de trabajo?",
+      "¿Qué GPTs son los más populares actualmente?",
+      "¿Puedo usar GPTs de la Store gratuitamente?",
+    ],
     limitaciones: [
-      'Puede no recuperar siempre el fragmento correcto; pide que el GPT repregunte ("¿de qué documento/versión?") y que el usuario pegue el apartado si es crítico.',
+      "La calidad varía según el creador del GPT",
+      "Algunos GPTs pueden requerir integraciones o permisos adicionales",
+      "Los usuarios gratuitos tienen limitaciones de uso",
     ],
   },
   {
     id: "3",
-    name: "Análisis CRM",
-    title: "Asistente de Análisis de Datos de CRM",
-    category: "analisis",
+    name: "Requisitos de Acceso",
+    title: "¿Quién Puede Usar y Crear GPTs?",
+    category: "acceso",
     description:
-      "Lee y analiza datos exportados de un CRM. Carga reportes de ventas, listados de clientes o métricas y obtén insights rápidos con conclusiones y listados.",
+      "Los usuarios gratuitos pueden usar GPTs existentes pero no crearlos. Los usuarios de pago (Plus, Pro, Team, Enterprise) tienen acceso completo para crear, publicar y usar GPTs sin limitaciones.",
     template: {
-      objetivo: "Analizar export de CRM (CSV/XLSX) y responder preguntas de pipeline, ventas, segmentación.",
-      entradas: ["CSV/XLSX con datos de CRM", "herramientas: Data Analysis + File uploads"],
-      salidas: ["KPIs", "tablas", "conclusiones", "próximos pasos"],
+      objetivo: "Entender los diferentes niveles de acceso y funcionalidades según el tipo de cuenta.",
+      entradas: ["Tipo de suscripción", "Necesidades de creación vs uso", "Límites de mensajes"],
+      salidas: [
+        "Claridad sobre qué puedes hacer con tu cuenta",
+        "Decisión informada sobre upgrade",
+        "Conocimiento de limitaciones",
+      ],
     },
     example: {
-      nombre: "Analista CRM",
-      descripcion: "Analiza exports de CRM y genera insights accionables.",
+      nombre: "Niveles de Acceso",
+      descripcion: "Comparación entre usuarios gratuitos y de pago.",
       instrucciones:
-        "Si hay archivo, cárgalo y perfila columnas → limpia → calcula KPIs → responde con tablas y conclusiones.",
+        "GRATUITOS: ✅ Usar GPTs existentes | ❌ Crear GPTs | ❌ Publicar | ⚠️ Límites de uso. PAGO (Plus/Pro): ✅ Crear ilimitados | ✅ Publicar en Store | ✅ Acceso completo | ✅ Sin límites.",
     },
-    solicitudes: ["Top 20 cuentas por MRR y variación mensual.", "¿Dónde se cae más el funnel?"],
-    limitaciones: ['Sin Actions no "lee" el CRM en vivo; requiere export.'],
+    solicitudes: [
+      "¿Puedo crear GPTs con cuenta gratuita?",
+      "¿Cuánto cuesta ChatGPT Plus?",
+      "¿Qué diferencia hay entre Plus y Pro?",
+    ],
+    limitaciones: [
+      "Requiere suscripción de pago para crear GPTs propios",
+      "Los precios pueden variar según región y tipo de cuenta",
+    ],
   },
   {
     id: "4",
-    name: "Minutas de Reunión",
-    title: "Asistente para Resumir Reuniones y Generar Tareas",
-    category: "administracion",
+    name: "Configuración Básica",
+    title: "Elementos de un GPT Personalizado",
+    category: "practica",
     description:
-      "Apoya tareas administrativas tras reuniones. Proporciona notas o transcripciones y obtén un resumen estructurado con tareas asignadas a cada participante.",
+      "Para crear un GPT necesitas definir: Nombre, Descripción, Instrucciones (el más importante), Prompt starters, Knowledge/Archivos opcionales, y habilitar herramientas nativas según convenga (Data Analysis, File uploads, Search, Image generation).",
     template: {
-      objetivo: "Convertir notas/transcripción en resumen ejecutivo + acuerdos + tareas con responsables y fechas.",
-      entradas: ["texto pegado o archivo"],
-      salidas: ["acta", "lista de acciones (formato checklist)"],
+      objetivo:
+        "Configurar correctamente todos los elementos de un GPT para que funcione según tus necesidades específicas.",
+      entradas: [
+        "Nombre claro y descriptivo",
+        "Descripción del propósito",
+        "Instrucciones detalladas de comportamiento",
+        "Ejemplos de preguntas iniciales",
+        "Archivos de conocimiento (opcional)",
+        "Capacidades a habilitar",
+      ],
+      salidas: ["GPT funcional y especializado", "Comportamiento consistente", "Resultados predecibles y útiles"],
     },
     example: {
-      nombre: "Actas y Acciones",
-      descripcion: "Convierte notas de reunión en actas estructuradas.",
-      instrucciones: "Separar: decisiones, riesgos, próximos pasos; extraer tareas con verbo + dueño + deadline.",
+      nombre: "Plantilla de Configuración",
+      descripcion: "Estructura básica para crear tu primer GPT.",
+      instrucciones:
+        "1. Nombre: Describe qué hace | 2. Descripción: Para quién es útil | 3. Instrucciones: Comportamiento detallado, tono, formato de respuestas | 4. Starters: 4 preguntas ejemplo | 5. Knowledge: PDFs/docs relevantes | 6. Tools: Activa solo las necesarias.",
     },
-    solicitudes: ["Aquí va la transcripción: crea acta y tareas.", "Escribe email de seguimiento."],
-    limitaciones: ['Si no hay responsables explícitos, debe preguntar o dejar "Pendiente de asignar".'],
+    solicitudes: [
+      "¿Qué debo poner en las instrucciones?",
+      "¿Cuántos archivos puedo subir como Knowledge?",
+      "¿Qué herramientas debo activar para análisis de datos?",
+    ],
+    limitaciones: [
+      "Las instrucciones tienen límite de caracteres (suele ser generoso pero existe)",
+      "Los archivos de Knowledge tienen límite de tamaño y número",
+      "No todas las capacidades son compatibles entre sí",
+    ],
   },
   {
     id: "5",
-    name: "Redacción Profesional",
-    title: "Asistente de Redacción de Correos y Documentos Profesionales",
-    category: "administracion",
+    name: "Instrucciones Efectivas",
+    title: "Cómo Escribir Buenas Instrucciones",
+    category: "practica",
     description:
-      "Crea comunicaciones escritas formales. Indica el propósito del correo o documento y obtén un borrador bien escrito con tono profesional y formato adecuado.",
+      "Las instrucciones son el corazón de tu GPT. Deben ser claras, específicas y cubrir: rol del asistente, tono y estilo, formato de respuestas, qué hacer y qué NO hacer, manejo de casos especiales.",
     template: {
-      objetivo:
-        "Redactar con tono profesional; pedir briefing mínimo; entregar 2–3 versiones (formal/neutral/cercana).",
-      entradas: ["objetivo", "audiencia", "tono deseado"],
-      salidas: ["asunto", "email", "CTA", "versión corta"],
+      objetivo: "Redactar instrucciones que produzcan respuestas consistentes, útiles y alineadas con tu objetivo.",
+      entradas: [
+        "Definición clara del rol",
+        "Ejemplos de respuestas ideales",
+        "Restricciones y límites",
+        "Casos especiales o edge cases",
+      ],
+      salidas: [
+        "Comportamiento predecible del GPT",
+        "Respuestas de calidad consistente",
+        "Manejo adecuado de situaciones inesperadas",
+      ],
     },
     example: {
-      nombre: "Redactor Pro",
-      descripcion: "Redacta emails y documentos profesionales.",
-      instrucciones: "Primero recopila objetivo/audiencia/tono → luego redacta → luego revisa claridad.",
+      nombre: "Estructura de Instrucciones",
+      descripcion: "Plantilla para instrucciones efectivas.",
+      instrucciones:
+        'Eres [ROL]. Tu objetivo es [PROPÓSITO]. TONO: [formal/casual/técnico]. FORMATO: [lista/párrafo/tabla]. SIEMPRE: [comportamientos deseados]. NUNCA: [comportamientos prohibidos]. Si el usuario pregunta X, responde Y. Si no tienes información, di "No tengo esa información" en lugar de inventar.',
     },
-    solicitudes: ["Email para pedir reunión a un lead frío.", "Propuesta de 1 página para un servicio."],
-    limitaciones: ["No conoce políticas internas salvo que se suban como Knowledge."],
+    solicitudes: [
+      "Dame un ejemplo de instrucciones para un GPT de marketing",
+      "¿Cómo evito que mi GPT invente información?",
+      "¿Qué tan detalladas deben ser las instrucciones?",
+    ],
+    limitaciones: [
+      "Instrucciones muy largas pueden ser ignoradas parcialmente",
+      "El modelo puede interpretar instrucciones ambiguas de forma inesperada",
+      "Requiere iteración y pruebas para afinar",
+    ],
   },
   {
     id: "6",
-    name: "Recursos Visuales",
-    title: "Asistente Creativo para Recursos Visuales",
-    category: "creatividad",
+    name: "Knowledge Base",
+    title: "Agregar Conocimiento Específico",
+    category: "practica",
     description:
-      "Genera ideas visuales para proyectos de diseño o marketing. Describe la necesidad y obtén conceptos creativos, estilos gráficos, paletas de colores y prompts para generación de imágenes.",
+      "Puedes subir archivos (PDFs, documentos, datos) que el GPT usará como base de conocimiento. Esto es ideal para documentación interna, manuales, políticas, datos de productos, o cualquier información específica de tu dominio.",
     template: {
-      objetivo:
-        "Proponer conceptos creativos y generar prompts para imagen (y, si aplica, guías para video) sin usar apps externas.",
-      entradas: ["descripción de necesidad creativa"],
-      salidas: ["concepto", "composición", "variaciones", "prompts"],
+      objetivo: "Proporcionar al GPT acceso a información específica que no está en su entrenamiento base.",
+      entradas: [
+        "PDFs, Word, Excel, CSV",
+        "Documentación técnica",
+        "Políticas y procedimientos",
+        "Datos históricos o catálogos",
+      ],
+      salidas: [
+        "Respuestas basadas en tu información real",
+        "Referencias a documentos específicos",
+        "Análisis de tus datos propios",
+      ],
     },
     example: {
-      nombre: "Director Visual",
-      descripcion: "Genera conceptos visuales y prompts para diseño.",
-      instrucciones: "Entregar 3 conceptos → elegir 1 → generar prompts con parámetros y negativos.",
+      nombre: "Casos de Uso de Knowledge",
+      descripcion: "Ejemplos de archivos útiles para subir.",
+      instrucciones:
+        "Manual de empleados → GPT responde políticas de RR.HH. | Catálogo de productos → GPT asiste en ventas | Documentación técnica → GPT ayuda en soporte | Datos históricos → GPT genera análisis y reportes.",
     },
     solicitudes: [
-      "Necesito 5 ideas de creatividades para campaña de Navidad.",
-      "Dame prompts para estilo minimalista.",
+      "¿Qué formato de archivo funciona mejor?",
+      "¿Cuántos archivos puedo subir?",
+      "¿El GPT siempre usa los archivos que subo?",
     ],
-    limitaciones: ["Si no activas generación de imagen, solo entrega prompts/guías."],
+    limitaciones: [
+      "La recuperación de información puede ser imprecisa (vector search)",
+      "Archivos muy grandes o mal estructurados dificultan la búsqueda",
+      "No garantiza que siempre encuentre la información correcta",
+    ],
   },
   {
     id: "7",
-    name: "Planificador de Tareas",
-    title: "Asistente de Seguimiento de Tareas y Agenda",
-    category: "administracion",
+    name: "Herramientas Nativas",
+    title: "Capacidades y Tools Disponibles",
+    category: "practica",
     description:
-      "Actúa como auxiliar administrativo personal para organizar pendientes. Introduce listas de tareas, fechas límite y eventos, y obtén resúmenes de prioridades y sugerencias de organización.",
+      "Puedes habilitar diferentes herramientas: Data Analysis (Python para análisis), File uploads (permitir que usuarios suban archivos), Search (búsqueda web), Image generation (crear imágenes con DALL-E).",
     template: {
-      objetivo: "Priorizar tareas (impacto/urgencia) y crear plan semanal con time-blocking.",
-      entradas: ["listas de tareas", "fechas límite", "eventos del calendario"],
-      salidas: ["matriz de prioridades", "plan semanal", "checklist diario"],
+      objetivo: "Seleccionar y configurar las capacidades que tu GPT necesita para su función específica.",
+      entradas: ["Tipo de tarea a realizar", "Necesidad de datos externos", "Requisitos de generación"],
+      salidas: [
+        "GPT con capacidades adecuadas",
+        "Mejor experiencia de usuario",
+        "Funcionalidad completa según caso de uso",
+      ],
     },
     example: {
-      nombre: "Planificador Semanal",
-      descripcion: "Organiza tareas y optimiza tu agenda.",
-      instrucciones: "Clasifica → estima tiempos → bloquea en calendario textual → revisa riesgos.",
+      nombre: "Cuándo Usar Cada Tool",
+      descripcion: "Guía para elegir herramientas correctas.",
+      instrucciones:
+        "Data Analysis: para análisis de datos, cálculos, procesamiento de archivos | File uploads: cuando usuarios necesitan subir documentos | Search: para información actualizada o verificación de hechos | Image generation: para crear visuales, logos, ilustraciones.",
     },
-    solicitudes: ["Organiza mi semana con 25 tareas y 2 proyectos.", "Dame plan diario para hoy."],
-    limitaciones: ['No puede acceder a tu calendario real sin integraciones; usa planificación "propuesta".'],
+    solicitudes: [
+      "¿Qué herramienta necesito para análisis de Excel?",
+      "¿Puedo combinar varias herramientas?",
+      "¿Search consume créditos adicionales?",
+    ],
+    limitaciones: [
+      "Data Analysis tiene límites de tiempo de ejecución y memoria",
+      "Search puede no siempre encontrar información relevante",
+      "Image generation tiene límites de calidad y coherencia",
+    ],
   },
   {
     id: "8",
-    name: "Informes de Ventas",
-    title: "Asistente para Generación de Informes de Ventas",
-    category: "analisis",
+    name: "Testing y Refinamiento",
+    title: "Probar y Mejorar tu GPT",
+    category: "practica",
     description:
-      "Elabora informes a partir de datos de ventas. Proporciona datos en hojas de cálculo o CSV y obtén un informe narrativo con análisis de tendencias y recomendaciones.",
+      "Después de crear tu GPT, es crucial probarlo extensivamente. Haz preguntas variadas, casos límite, situaciones inesperadas. Refina las instrucciones basándote en las respuestas que obtienes.",
     template: {
-      objetivo: "Generar informe ejecutivo a partir de CSV/Excel: KPIs, tendencias, insights y recomendaciones.",
-      entradas: ["CSV/Excel con datos de ventas", "herramientas: Data Analysis"],
-      salidas: ["informe de 1 página", "anexos con tablas"],
+      objetivo: "Iterar sobre la configuración hasta lograr un GPT que funcione de manera óptima y consistente.",
+      entradas: ["Casos de prueba diversos", "Feedback de usuarios reales", "Registro de respuestas incorrectas"],
+      salidas: ["GPT refinado y confiable", "Documentación de limitaciones conocidas", "Instrucciones optimizadas"],
     },
     example: {
-      nombre: "Informe Ventas",
-      descripcion: "Genera informes ejecutivos de ventas con insights.",
-      instrucciones: "Calcular KPIs → comparar periodos → explicar drivers → recomendar acciones.",
+      nombre: "Proceso de Testing",
+      descripcion: "Metodología para probar y mejorar tu GPT.",
+      instrucciones:
+        "1. Prueba casos normales → 2. Prueba casos límite → 3. Identifica fallos → 4. Ajusta instrucciones → 5. Repite. Pide a otros que lo prueben. Documenta qué funciona y qué no.",
     },
-    solicitudes: ["Informe de octubre vs septiembre con conclusiones.", "Segmenta por canal y región."],
-    limitaciones: ["Calidad depende de columnas y consistencia del dataset."],
+    solicitudes: [
+      "¿Cómo sé si mi GPT está listo para publicar?",
+      "¿Qué casos debo probar obligatoriamente?",
+      "¿Con qué frecuencia debo actualizar mi GPT?",
+    ],
+    limitaciones: [
+      "El testing exhaustivo toma tiempo y múltiples iteraciones",
+      "Algunos problemas solo aparecen en uso real por terceros",
+      "Las actualizaciones del modelo base pueden afectar el comportamiento",
+    ],
   },
   {
     id: "9",
-    name: "Campañas de Marketing",
-    title: "Asistente de Planificación de Campañas de Marketing",
-    category: "marketing",
+    name: "Publicar en la Store",
+    title: "Compartir tu GPT con el Mundo",
+    category: "marketplace",
     description:
-      "Estructura campañas publicitarias o de marketing paso a paso. Indica objetivos, público objetivo y presupuesto, y obtén un plan completo con canales, calendario y métricas.",
+      "Una vez satisfecho con tu GPT, puedes publicarlo en la GPT Store para que otros lo descubran y usen. Necesitas configurar visibilidad, categoría, y cumplir con las políticas de OpenAI.",
     template: {
-      objetivo:
-        "Crear plan de campaña: objetivo, audiencias, propuesta, funnel, calendario, copies base y plan de medición.",
-      entradas: ["objetivos de campaña", "público objetivo", "presupuesto disponible"],
-      salidas: ["documento estructurado", "checklist de ejecución"],
+      objetivo: "Hacer que tu GPT esté disponible públicamente y sea descubrible por usuarios interesados.",
+      entradas: [
+        "GPT completamente funcional y probado",
+        "Descripción clara y atractiva",
+        "Categoría apropiada",
+        "Cumplimiento de políticas",
+      ],
+      salidas: ["GPT visible en la Store", "Potencial de uso por miles de usuarios", "Feedback de la comunidad"],
     },
     example: {
-      nombre: "Planner Marketing",
-      descripcion: "Planifica campañas de marketing completas.",
-      instrucciones: "Brief mínimo → estrategia → assets por canal → KPIs + tests A/B.",
+      nombre: "Checklist de Publicación",
+      descripcion: "Pasos para publicar tu GPT exitosamente.",
+      instrucciones:
+        "1. Verifica que funciona correctamente | 2. Escribe descripción clara y útil | 3. Elige categoría correcta | 4. Revisa que cumple políticas | 5. Configura visibilidad pública | 6. Publica | 7. Monitorea feedback.",
     },
-    solicitudes: ["Campaña lead gen con presupuesto bajo para B2B.", "Genera copies para 3 anuncios."],
-    limitaciones: ["Sin navegación, no valida datos externos; si activas Search, que cite fuentes."],
+    solicitudes: [
+      "¿Qué requisitos debe cumplir mi GPT para publicarlo?",
+      "¿Puedo monetizar mi GPT en la Store?",
+      "¿Cómo hago que mi GPT sea popular?",
+    ],
+    limitaciones: [
+      "OpenAI revisa GPTs publicados y puede rechazar o remover los que violen políticas",
+      "La visibilidad depende de calidad, utilidad y adopción",
+      "Actualmente no hay monetización directa (puede cambiar)",
+    ],
   },
   {
     id: "10",
-    name: "Brainstorming Creativo",
-    title: "Asistente de Brainstorming Creativo",
-    category: "creatividad",
+    name: "GPT Builder Asistente",
+    title: "Encontrar un GPT Especialista en Crear GPTs",
+    category: "practica",
     description:
-      "Genera ideas y soluciones creativas. Plantea una necesidad creativa (eslóganes, nombres de producto, temas para seminarios) y obtén varias propuestas innovadoras.",
+      "En la GPT Store puedes encontrar GPTs especializados en ayudarte a crear otros GPTs. Busca términos como 'GPT builder', 'custom GPT creator', 'prompt engineer', que te guiarán en el proceso de construcción.",
     template: {
-      objetivo: "Idear muchas opciones, evaluarlas con criterios y refinar top 3.",
-      entradas: ["necesidad creativa", "contexto del proyecto"],
-      salidas: ["lista de ideas", "scoring", "versiones finales refinadas"],
+      objetivo: "Usar un GPT existente como asistente para diseñar y configurar tu propio GPT de manera más efectiva.",
+      entradas: ["Descripción de tu caso de uso", "Objetivo del GPT que quieres crear", "Audiencia target"],
+      salidas: [
+        "Configuración completa lista para copiar",
+        "Instrucciones optimizadas",
+        "Sugerencias de herramientas y conocimiento",
+      ],
     },
     example: {
-      nombre: "Brainstorm & Filtro",
-      descripcion: "Genera y evalúa ideas creativas.",
-      instrucciones: "Divergir (50 ideas) → converger (criterios) → refinar (top 3).",
+      nombre: "Búsquedas Efectivas",
+      descripcion: "Términos para encontrar GPT builders en la Store.",
+      instrucciones:
+        'Busca: "GPT builder", "create a custom GPT", "prompt engineer for GPTs", "instruction writer", "system prompt generator". Describe tu caso de uso y el GPT builder te ayudará a estructurar todo.',
     },
-    solicitudes: ["20 nombres para un SaaS de RRHH.", "Slogan corto para marca eco."],
-    limitaciones: ["No garantiza disponibilidad legal/dominio; debe advertir verificación manual."],
+    solicitudes: [
+      "¿Hay GPTs que me ayuden a crear otros GPTs?",
+      "¿Qué GPT builder recomiendas?",
+      "¿Puedo pedirle que genere las instrucciones completas?",
+    ],
+    limitaciones: [
+      "La calidad varía según el GPT builder que elijas",
+      "Siempre debes revisar y adaptar las sugerencias a tu caso",
+      "No reemplaza tu expertise en el tema que quieres cubrir",
+    ],
   },
 ]
 
 export const categories = [
   { value: "all", label: "Todos" },
-  { value: "marketing", label: "Marketing" },
-  { value: "analisis", label: "Análisis" },
-  { value: "creatividad", label: "Creatividad" },
-  { value: "administracion", label: "Administración" },
+  { value: "conceptos", label: "Conceptos" },
+  { value: "marketplace", label: "Marketplace" },
+  { value: "acceso", label: "Acceso" },
+  { value: "practica", label: "Práctica" },
 ]
