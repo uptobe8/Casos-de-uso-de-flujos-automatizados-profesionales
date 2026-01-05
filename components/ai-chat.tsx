@@ -59,11 +59,10 @@ export function AiChat({ isOpen, onClose }: AiChatProps) {
           {messages.length === 0 && (
             <div className="flex justify-start">
               <div className="max-w-[85%] p-3 rounded-2xl rounded-bl-md bg-white shadow-md text-gray-800 text-sm leading-relaxed border border-gray-200">
-                ¡Hola! Soy tu asistente especializado en ayudarte con tareas diarias, formación y automatización. ¿En
-                qué puedo ayudarte hoy?
+                ¡Hola! Soy tu asistente especializado en la creación de GPTs personalizados. ¿En qué puedo ayudarte hoy?
                 {"\n\n"}
-                Puedo ayudarte a:{"\n"}• Redactar emails profesionales y resúmenes{"\n"}• Explicar conceptos de
-                digitalización{"\n"}• Proponer mejoras en tus procesos de trabajo
+                Puedo ayudarte a:{"\n"}• Entender qué son los GPTs y cómo funcionan{"\n"}• Diseñar las instrucciones
+                perfectas para tu GPT{"\n"}• Guiarte en la publicación en la GPT Store
               </div>
             </div>
           )}
